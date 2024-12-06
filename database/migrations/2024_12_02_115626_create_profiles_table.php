@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profiles', function (Blueprint $table) {
-            $table->bigInteger('profile_id')->nullable(false);
+        Schema::create('mempelai', function (Blueprint $table) {
+            $table->bigIncrements('mempelai_id')->primary();
             $table->string('nama_lengkap')->nullable(false);
             $table->enum('jenis_kelamin', ['Pria', 'Wanita'])->nullable(false);
             $table->string('nama_panggilan')->nullable(false);
@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('link_facebook')->nullable(true);
             $table->string('link_twitter')->nullable(true);
             $table->string('link_tiktok')->nullable(true);
-            $table->foreignId('user_id');
-            $table->foreignId('file_id');
+            $table->foreignId('user_id')->nullable(true);
+            $table->foreignId('file_id')->nullable(true);
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('mempelai');
     }
 };

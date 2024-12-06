@@ -7,7 +7,7 @@ import { Transition } from '@headlessui/react';
 import { router, useForm } from '@inertiajs/react';
 import { FormEventHandler, useRef } from 'react';
 
-export default function CreateProfilForm({
+export default function UpdateProfilForm({
     className = '',
 }: {
     className?: string;
@@ -61,7 +61,7 @@ export default function CreateProfilForm({
         <section className={className}>
             <header>
                 <h2 className="text-lg font-medium text-gray-900">
-                    Profil Mempelai
+                    Ubah Profil Mempelai
                 </h2>
 
                 <p className="mt-1 text-sm text-gray-600">

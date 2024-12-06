@@ -15,13 +15,13 @@ import {
   
   const items = [
     {
-      title: "Home",
-      url: "#",
+      title: "Dashboard",
+      url: "/dashboard",
       icon: Home,
     },
     {
-      title: "Inbox",
-      url: "#",
+      title: "Mempelai",
+      url: "/mempelai/create",
       icon: Inbox,
     },
     {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MempelaiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +19,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/mempelai', function () {
-    return Inertia::render('Mempelai/Create');
-})->middleware(['auth', 'verified'])->name('mempelai.create');
+// Start: Route Mempelai
+Route::resource('mempelai', MempelaiController::class)->middleware(['auth', 'verified']);
+// End: Route Mempelai
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
